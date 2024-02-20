@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <title>To Do</title>
 </head>
-<script>
-
-    fetch('http://proyectoeasy.shop/backend_todo/estado/estado.php', {
-            method: "GET",
-            headers: {"Content-type": "application/json;charset=UTF-8"}
-    })
-    .then(response => response.json()) 
-    .then( json => {
-        const selectEstados = document.getElementById('selectEstados');
-        selectEstados.innerHTML = `<select id="estado" class="form-select form-select-sm"><option selected>Todos</option>${ json.results.map( estado => `<option value="${ estado.id_estado }">${ estado.nombre_estado}</option>`) }</select>`;
-    })
-    .catch(err => console.log(err));
-
-</script>
+<script src="js/peticionesGet.js"></script>
+<script src="js/peticionesPut.js"></script>
+<script src="js/peticionesPost.js"></script>
+<script src="js/peticionesDelete.js"></script>
 <body>
     <div class="head-container">
         <div class="head-logo">
@@ -35,17 +29,62 @@
     <div class="cuerpo-container">
         <div class="cuerpo-seccion">
             <div class="seccion-boton">
-                <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Nueva Tarea</button>
+                <button type="button" onclick="nuevaTarea()" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#formularioTarea"><i class="fa fa-plus"></i> Nueva Tarea</button>
             </div>
             <div class="seccion-filtros">
                 <div class="icono-filtro">
                     <i class="fa fa-filter"></i>
                 </div>
-                <label>Estado:&nbsp; </label>
-                <div id="selectEstados"></div>
+                <div class="campo-filtro">
+                    <label>Estado:&nbsp; </label>
+                    <div id="selectEstados"></div>
+                </div>
+                <div class="campo-filtro">
+                    <label>Usuario:&nbsp; </label>
+                    <div id="selectUsuarios"></div>
+                </div>
             </div>
-            
+
+        </div>
+        <div class="cuerpo-seccion">
+            <table class="table table-striped">
+                <thead>
+                    <th>Nombre Tarea</th>
+                    <th>Usuario</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody id="cuerpoTareas"></tbody>
+            </table>
         </div>
     </div>
+
+    <div class="modal fade" id="formularioTarea" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" id="headerModal">
+                    <h1 class="modal-title fs-5">Modal title</h1>
+                </div>
+                <div class="modal-body">
+                    <label for="nombreTarea" class="form-label">Nombre</label>
+                    <input type="text" id="nombreTarea" class="form-control mb-3" placeholder="Ingrese un nombre">
+
+                    <label for="nombreUsuario" class="form-label">Nombre Usuario</label>
+                    <input type="text" id="nombreUsuario" class="form-control mb-3" placeholder="Ingrese un nombre de usuario">
+
+                    <div id="selectEstado"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <div id="botonAccionTarea"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>

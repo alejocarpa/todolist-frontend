@@ -13,6 +13,8 @@ body{
     justify-content: left;
     align-items: center;
     box-shadow: 0px 1px 2px rgb(136, 136, 136);
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .head-logo{
@@ -24,7 +26,6 @@ body{
     border: 1px solid rgba(46, 173, 46, 0.808);
     border-radius: 10%;
     background-color: rgba(46, 173, 46, 0.808);
-    padding: 10px;
     font-size: 40px;
     color:rgba(255, 255, 255, 0.932);
     margin-left: 20px;
@@ -69,7 +70,43 @@ body{
 }
 
 .icono-filtro{
+    /* border: 1px solid #0f0; */
     font-size: 25px;
     color: rgb(128, 128, 128);
     margin-right: 20px;
+}
+
+.campo-filtro{
+    /* border: 1px solid #0f0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
+}
+
+.campoEstadoPendiente {
+    border: 1px solid rgb(59, 117, 241);
+    background-color: rgb(59, 117, 241);
+    border-radius: 15px;
+    color: white;
+    width: 60%;
+    text-align: center;
+}
+
+.campoEstadoRealizada {
+    border: 1px solid rgba(46, 173, 46, 0.808);
+    background-color: rgba(46, 173, 46, 0.808);
+    border-radius: 15px;
+    color: white;
+    width: 60%;
+    text-align: center;
+}
+
+.campoEstadoCancelada {
+    border: 1px solid rgb(219, 58, 58);
+    background-color: rgb(219, 58, 58);
+    border-radius: 15px;
+    color: white;
+    width: 60%;
+    text-align: center;
 }
