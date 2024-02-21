@@ -1,3 +1,4 @@
+/* Peticion para eliminar las tareas */
 const eliminarTarea = ( id_tarea ) => {
 
     if ( confirm("¿Desea eliminar la tarea?") == true) {

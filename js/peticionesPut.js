@@ -15,6 +15,7 @@ const editarTarea = (id_tarea, nombre_tarea, nombre_usuario_tarea, id_estado_tar
     botonAccionTarea.innerHTML = `<button type="button" class="btn btn-primary" onclick="actualizarTarea('${ id_tarea }')">Actualizar</button>`;
 }
 
+/* Peticion para actualizar las tareas */
 const actualizarTarea = ( id_tarea ) => {
 
     const nombreTarea = document.getElementById('nombreTarea').value;

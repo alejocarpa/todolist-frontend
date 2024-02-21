@@ -46,6 +46,7 @@ body{
 }
 
 .cuerpo-seccion{
+    /* border: 1px solid red; */
     border-bottom: 1px solid rgb(136, 136, 136);
     width: 100%;
     display: flex;
@@ -67,6 +68,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.seccion-tabla {
+    /* border: 1px solid red; */
+    width: 100%;
 }
 
 .icono-filtro{

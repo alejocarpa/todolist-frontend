@@ -1,5 +1,16 @@
 const nuevaTarea = () => {
 
+    document.getElementById('nombreTarea').value = '';
+    document.getElementById('nombreTarea').disabled = false;
+
+    document.getElementById('nombreUsuario').value = '';
+    document.getElementById('nombreUsuario').disabled = false;
+
+    const estados = document.getElementById('selectEstado');
+    while (estados.firstChild) {
+        estados.removeChild(estados.firstChild);
+    }
+
     const tituloHeader = document.getElementById('headerModal');
 
     tituloHeader.innerHTML = '<h1 class="modal-title fs-5" id="exampleModalLabel">Nueva Tarea</h1>';
@@ -8,6 +19,7 @@ const nuevaTarea = () => {
     botonAccionTarea.innerHTML = '<button type="button" class="btn btn-primary" onclick="guardarTarea()">Guardar</button>';
 }
 
+/* Peticion para guardar las tareas */
 const guardarTarea = () => {
 
     const nombreTarea = document.getElementById('nombreTarea').value;
