@@ -64,10 +64,45 @@ body{
 
 .seccion-filtros{
     /* border: 1px solid #0f0; */
-    width: 85%;
+    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.seccion-exportar {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-descargar {
+    text-decoration: none;
+}
+
+.exportar-icono {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(46, 173, 46, 0.808);
+    border-radius: 10%;
+    background-color: rgba(46, 173, 46, 0.808);
+    font-size: 30px;
+    color:rgba(255, 255, 255, 0.932);
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 10px black;
+}
+
+.exportar-icono:hover {
+    cursor: pointer;
+    background-color: rgb(46, 173, 46);
+    border: 1px transparent rgba(255, 255, 255, 0.516);
+    scale: 1.2;
 }
 
 .seccion-tabla {
